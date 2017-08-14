@@ -2,6 +2,6 @@
 import movies from './moviesReducer.js';
 
 const rootReducer = combineReducers({
-    movies
+    movies : movies
 })
 export default rootReducer;

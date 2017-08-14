@@ -3,14 +3,9 @@ import thunk from 'redux-thunk';
 import {createLogger} from 'redux-logger';
 
 import rootReducer from './modules/index.js';
-
-
-export default function configureStore() {  
-  return createStore(
-    rootReducer,
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
-}
-
-
+const middleware = applyMiddleware(thunk);
+const Sstore = createStore(
+  rootReducer,
+  compose(middleware,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+);
+export default Sstore ;
