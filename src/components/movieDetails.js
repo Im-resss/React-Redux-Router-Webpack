@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 
-class App extends React.Component {
+class details extends React.Component {
 
     render () { 
 
@@ -12,4 +12,4 @@ class App extends React.Component {
 
 }
 
-export default App;
+export default details;

@@ -1,23 +1,12 @@
-import React from 'react'
-import Fetch from 'react-fetch'
- 
-export default class App extends React.Component{
- 
-  render(){
-    return (
-      <Fetch url="http://api.openweathermap.org/data/2.5/weather?q=London,uk">
-        <TestComponent/>
-      </Fetch>
-    )
-  }
- 
+import React , {Component} from 'react';
+import {render} from 'react-dom';
+// import { withRouter } from 'react-router-dom';
+
+
+class Home extends React.Component  { 
+render() {
+  return <div>   <h1> Slav </h1> </div>;
 }
- 
-class TestComponent extends React.Component{
-  render(){
-    console.log(this.props)
-    return <div/>
-  }
 }
-React.render(<App />, document.getElementById(''));
- 
+
+export default Home;

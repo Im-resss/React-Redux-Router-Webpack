@@ -1,23 +1,25 @@
 import React from 'react';
-import {render} from 'react-dom';
-import {Provider} from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
-import configureStore from './store/configureStore.js';
-import App from './components/App.js';
-import routes from './routes.js'
-import {loadMovies} from './actions/movieActions.js';
-const store = configureStore();
-store.dispatch= configureStore();
-render(
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+const history = createBrowserHistory();
+
+import Sstore from './store/configureStore.js';
+import { loadMovies } from './actions/movieActions.js';
+import App from './App.js';
+
+
+const store = Sstore;
+
+store.dispatch(loadMovies());
+
+
+ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route exact path="/" component={App}>
-       
-      </Route>
+      <App />
     </Router>
   </Provider>,
   document.getElementById('root')
-)
+);
