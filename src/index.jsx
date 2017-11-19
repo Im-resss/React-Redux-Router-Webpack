@@ -16,6 +16,7 @@ store.dispatch(loadMovies());
 
 
 ReactDOM.render(
+	
   <Provider store={store}>
     <Router history={history}>
       <App />
